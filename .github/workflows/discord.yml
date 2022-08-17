@@ -10,4 +10,4 @@ jobs:
     steps:
     - name: Send CURL
       run: |
-        curl -X POST ${{ secrets.NEWBIES_DISCORD_WEBHOOK }} -d '{"content": "Dzisiaj środa"}'
+        curl -X POST -H "Content-Type: application/json" -d '{"content": "Dzisiaj środa"}' ${{ secrets.NEWBIES_DISCORD_WEBHOOK }}
