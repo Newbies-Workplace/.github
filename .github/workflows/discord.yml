@@ -1,0 +1,12 @@
+name: CI
+on:
+  schedule:
+    - cron: '55 15 * * 3'
+
+jobs:
+  send-discord-message:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Send CURL
+      run: |
+        curl -X POST $NEWBIES_DISCORD_WEBHOOK -d '{"content": "Dzisiaj środa"}'
